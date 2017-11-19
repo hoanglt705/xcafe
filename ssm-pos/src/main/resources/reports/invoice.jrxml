@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 5.6.2.final using JasperReports Library version 5.6.1  -->
+<!-- 2014-11-29T19:40:40 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="kitchen" pageWidth="161" pageHeight="300" columnWidth="151" leftMargin="5" rightMargin="5" topMargin="8" bottomMargin="8" isIgnorePagination="true" uuid="ab1bad52-e802-462d-8195-a9f3972737a7">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="mm"/>
+	<parameter name="SSM_NOTE" class="java.lang.String"/>
+	<parameter name="TABLE_PARAM" class="java.lang.String"/>
+	<parameter name="TOTAL_QUANTITY_PARAM" class="java.lang.Integer"/>
+	<parameter name="PERCENT_VAT_PARAM" class="java.lang.Integer"/>
+	<parameter name="AMOUNT_VAT_PARAM" class="java.lang.Long"/>
+	<parameter name="TOTAL_AMOUNT_PARAM" class="java.lang.Long"/>
+	<parameter name="TOTAL_PAYMENT_PARAM" class="java.lang.Long"/>
+	<parameter name="TOTAL_DISCOUNT_PARAM" class="java.lang.Long"/>
+	<parameter name="COMPANY_NAME_PARAM" class="java.lang.String"/>
+	<parameter name="ADDRESS_PARAM" class="java.lang.String"/>
+	<parameter name="FIX_PHONE_PARAM" class="java.lang.String"/>
+	<parameter name="TOTAL_RETURN_PARAM" class="java.lang.Long"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="no" class="java.lang.Integer"/>
+	<field name="productName" class="java.lang.String"/>
+	<field name="quantity" class="java.lang.Integer"/>
+	<field name="unitPrice" class="java.lang.Long"/>
+	<field name="amount" class="java.lang.Long"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="130" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="85" width="130" height="25" uuid="5859e24e-7989-468a-9c80-39b1cfd41baa"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Hóa đơn]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="110" width="19" height="20" uuid="240770a0-9958-408d-81d2-ca1be9436165"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Bàn:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="20" y="110" width="110" height="20" uuid="9302108c-bd39-43b1-9072-9d1a0137c98c"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{TABLE_PARAM}]]></textFieldExpression>
+			</textField>
+			<textField pattern="d/M/yy h:mm">
+				<reportElement x="0" y="0" width="130" height="17" uuid="2aba716c-681b-467b-97e2-6828800ababc"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="8" isItalic="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="17" width="130" height="23" uuid="f8753895-dd25-445f-b474-d7fd1ec4741e"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{COMPANY_NAME_PARAM}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="40" width="130" height="20" uuid="e4bc8d4c-61dc-4e92-b9f4-bfc8343f225a"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{ADDRESS_PARAM}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="60" width="130" height="25" uuid="0b5be6f0-68d7-46d1-a52a-40646ea9f346"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA["ĐT: "+$P{FIX_PHONE_PARAM}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="21" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="19" height="20" uuid="2a24eb18-a0a4-4415-917d-fb2a022472bd"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Stt]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="19" y="0" width="111" height="20" uuid="bd23c76c-8ce2-4539-b02f-4be2e30db933"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Món]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="20" width="130" height="1" uuid="dbaa7830-76dc-4e0a-8871-8786fca0ba03"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="40" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="19" height="20" uuid="01274bed-0488-4469-babf-8074de56eaaf"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{no}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="19" y="0" width="111" height="20" uuid="d9007e80-65bd-45a0-a10a-481ad45e05c6"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{productName}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.###">
+				<reportElement x="50" y="20" width="40" height="20" uuid="5346b37c-6686-460a-a970-0f92e3d841e1"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{unitPrice}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.###">
+				<reportElement x="19" y="20" width="21" height="20" uuid="24997f67-96a8-4f86-a178-5bcf3e701be4"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{quantity}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="40" y="20" width="10" height="20" uuid="448ded1e-de1b-43dc-a451-ab50fc6689b1"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[x]]></text>
+			</staticText>
+			<textField pattern="#,##0.###">
+				<reportElement x="90" y="20" width="40" height="20" uuid="4cb61b27-dac5-451b-93b5-898b227eb58a"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{amount}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<lastPageFooter>
+		<band height="143">
+			<staticText>
+				<reportElement x="0" y="0" width="90" height="20" uuid="62942c2b-0049-444e-a9c5-94e6996cfcff"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+					<paragraph rightIndent="5"/>
+				</textElement>
+				<text><![CDATA[Tổng tiền thanh toán]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="0" width="130" height="1" uuid="1e3a3bec-a071-4e10-a0e1-f163eedf2136"/>
+			</line>
+			<staticText>
+				<reportElement x="0" y="20" width="90" height="20" uuid="24fa3b43-63cc-4a44-8ab2-362ae03feec1"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="8"/>
+					<paragraph rightIndent="5"/>
+				</textElement>
+				<text><![CDATA[Tổng số lượng]]></text>
+			</staticText>
+			<textField pattern="#,##0.###">
+				<reportElement x="90" y="20" width="40" height="20" uuid="d41a474c-44ea-4254-9764-60075e696fc1"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{TOTAL_QUANTITY_PARAM}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="40" width="90" height="20" uuid="9d623eb6-cccd-4f78-8641-17d3385f6f92"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="8"/>
+					<paragraph rightIndent="5"/>
+				</textElement>
+				<text><![CDATA[Khách trả]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="60" width="90" height="20" uuid="d3503047-3d2f-44a8-9374-dce4934efcaa"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+					<paragraph rightIndent="5"/>
+				</textElement>
+				<text><![CDATA[Thối lại]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="80" width="70" height="20" uuid="6a348da4-243d-42ac-8a8f-5edd86d5c796"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[VAT]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="70" y="80" width="20" height="20" uuid="0062ba8a-d41c-42e4-9191-c67bb5a8395d"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{PERCENT_VAT_PARAM}+"%"]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.###">
+				<reportElement x="90" y="80" width="40" height="20" uuid="6357f2ed-c4cc-4509-983b-fb3562320555"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{AMOUNT_VAT_PARAM}]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report" pattern="#,##0.###">
+				<reportElement x="90" y="1" width="40" height="18" uuid="d2eab9d6-74a4-40bb-885b-086ec6b7bb82"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{TOTAL_AMOUNT_PARAM}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.###">
+				<reportElement x="90" y="40" width="40" height="20" uuid="384351e4-f9fa-4397-a798-21a5c90071de"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{TOTAL_PAYMENT_PARAM}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="100" width="90" height="20" uuid="f7453296-b42f-4fb5-b458-395eb2fb3806"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="8"/>
+					<paragraph rightIndent="5"/>
+				</textElement>
+				<text><![CDATA[Giảm giá]]></text>
+			</staticText>
+			<textField pattern="#,##0.###">
+				<reportElement x="90" y="100" width="40" height="20" uuid="55f8a9cc-7c43-4e79-b2d7-2a40fb436aa3"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{TOTAL_DISCOUNT_PARAM}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.###">
+				<reportElement x="90" y="60" width="40" height="20" uuid="aa71e7fd-d5f2-4037-a772-c793fbabe1a5"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{TOTAL_RETURN_PARAM}]]></textFieldExpression>
+			</textField>
+		</band>
+	</lastPageFooter>
+</jasperReport>
