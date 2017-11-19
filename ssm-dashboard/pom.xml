@@ -1,0 +1,42 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.s3s</groupId>
+		<artifactId>ssm</artifactId>
+		<version>${ssm.version}</version>
+	</parent>
+	<artifactId>ssm-dashboard</artifactId>
+	<version>${ssm.version}</version>
+	<packaging>jar</packaging>
+	<name>Dashboard module</name>
+	<description>Dashboard module</description>
+	<dependencies>
+		<dependency>
+			<groupId>com.s3s</groupId>
+			<artifactId>ssm-core</artifactId>
+			<version>${ssm.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>tablelayout</groupId>
+			<artifactId>TableLayout</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-web</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.caucho</groupId>
+			<artifactId>hessian</artifactId>
+		</dependency>
+		<dependency>
+		  <groupId>com.oracle</groupId>
+		  <artifactId>javafx</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.s3s</groupId>
+			<artifactId>ssm-service-api</artifactId>
+			<version>${ssm.version}</version>
+		</dependency>
+	</dependencies>
+</project>
