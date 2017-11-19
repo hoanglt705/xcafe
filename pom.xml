@@ -1,0 +1,463 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.s3s</groupId>
+	<artifactId>ssm</artifactId>
+	<packaging>pom</packaging>
+	<version>${ssm.version}</version>
+	<name>SuperSalesManagememt (Root)</name>
+
+	<!--repositories>
+    <repository>
+        <id>AAVN-WS-68</id>
+        <name>AAVN-WS-68-releases</name>
+        <url>http://localhost:8081/artifactory/ext-release-local</url>
+    </repository>
+
+  </repositories--> 
+	
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+				</configuration>
+				<version>3.2</version>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>2.18.1</version>
+			</plugin>
+			<!-- Eclipse plugin -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-eclipse-plugin</artifactId>
+				<configuration>
+					<downloadSources>true</downloadSources>
+					<downloadJavadocs>true</downloadJavadocs>
+				</configuration>
+				<version>2.9</version>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-dependency-plugin</artifactId>
+				<version>2.10</version>
+			</plugin>
+			
+		</plugins>
+
+	</build>
+
+	<modules>
+		<module>ssm-widget</module>
+		<module>ssm-core</module>
+		<module>ssm-service-api</module>
+		<module>ssm-license</module>
+		<module>ssm-crm-server</module>
+		<module>ssm-manager</module>
+		<module>ssm-pos</module>
+		<module>ssm-dashboard</module>
+		<module>ssm-report</module>
+		<module>ssm-timeline</module>
+		<module>ssm-kitchen</module>
+		<module>ssm-app</module>
+		<module>ssm-spring-boot-service</module>
+	</modules>
+
+	<properties>
+		<ssm.version>1.0-SNAPSHOT</ssm.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+		<cglib.version>3.1</cglib.version>
+
+		<mysql.version>5.1.34</mysql.version>
+		<hibernate-jpa.version>1.0.0.Final</hibernate-jpa.version>
+		<hibernate-core.version>4.3.0.Final</hibernate-core.version>
+		<hibernate-annotations.version>3.4.0.GA</hibernate-annotations.version>
+		<hibernate-commons-annotations.version>3.1.0.GA</hibernate-commons-annotations.version>
+		<hibernate-entitymanager.version>4.1.9.Final</hibernate-entitymanager.version>
+		<hibernate-validator.version>5.0.2.Final</hibernate-validator.version>
+		<log4j.version>1.2.14</log4j.version>
+		<datedFileAppender>1.0.2</datedFileAppender>
+		<slf4j-log4j12.version>1.5.2</slf4j-log4j12.version>
+
+		<commons-lang.version>2.5</commons-lang.version>
+		<commons-collections.version>3.2.1</commons-collections.version>
+		<commons-io.version>2.4</commons-io.version>
+		
+		<aspectj.version>1.5.4</aspectj.version>
+		<bsaf.version>1.9.2</bsaf.version>
+		
+		<swingx.version>1.6.5-1</swingx.version>
+		<jide-oss.version>3.6.5</jide-oss.version>
+		<miglayout.version>3.7.3.1</miglayout.version>
+		<TableLayout.version>20050920</TableLayout.version>
+		<beansbinding.version>1.2.1</beansbinding.version>
+		<jasperreport.version>6.0.3</jasperreport.version>
+		<usertype.core.version>3.1.0.CR1</usertype.core.version>
+		<javassist.version>3.19.0.GA</javassist.version>
+		
+        <!--Test lib -->
+		<junit.version>4.12</junit.version>
+		<mockito.version>1.10.19</mockito.version>
+		<powermock.version>1.6.1</powermock.version>
+		
+		<jemmy.version>2.2.7.5</jemmy.version>
+		
+		<jbusycomponent.version>1.2.3</jbusycomponent.version>
+		<eventbus.version>1.4</eventbus.version>
+		<!--jfreechart lib -->
+		<jfreechart.version>1.0.13</jfreechart.version>
+		<!--Export lib -->
+		<jsefa.version>1.1.1.RELEASE</jsefa.version>
+		<softsmithy.version>0.4</softsmithy.version>
+		<synthetica.version>2.19.0</synthetica.version>
+		<syntheticaAddon.version>1.9.0</syntheticaAddon.version>
+		<ehcache.version>2.8.2</ehcache.version>
+		<hessian.version>4.0.38</hessian.version>
+		<querydsl.version>3.6.0</querydsl.version>
+		<commons-lang3.version>3.3.2</commons-lang3.version>
+		<commons-email.version>1.3.3</commons-email.version>
+		<skipTestUI>false</skipTestUI>
+	</properties>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>com.s3s</groupId>
+				<artifactId>ssm-widget</artifactId>
+				<version>${ssm.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.s3s</groupId>
+				<artifactId>ssm-core</artifactId>
+				<version>${ssm.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.s3s</groupId>
+				<artifactId>ssm-license</artifactId>
+				<version>${ssm.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.s3s</groupId>
+				<artifactId>ssm-app</artifactId>
+				<version>${ssm.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.s3s</groupId>
+				<artifactId>ssm-view</artifactId>
+				<version>${ssm.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.s3s</groupId>
+				<artifactId>ssm-pos</artifactId>
+				<version>${ssm.version}</version>
+			</dependency>
+
+			<!-- TestNG -->
+			<dependency>
+				<groupId>org.netbeans</groupId>
+				<artifactId>jemmy</artifactId>
+				<version>${jemmy.version}</version>
+				<!--scope>test</scope-->
+			</dependency>
+			<dependency>
+				<groupId>junit</groupId>
+				<artifactId>junit</artifactId>
+				<version>${junit.version}</version>
+				<!--scope>test</scope-->
+			</dependency>
+
+			<!-- Spring framework -->
+
+		<dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-framework-bom</artifactId>
+            <version>4.0.6.RELEASE</version>
+            <type>pom</type>
+            <scope>import</scope>
+        </dependency>
+			<dependency>
+				<groupId>cglib</groupId>
+				<artifactId>cglib</artifactId>
+				<version>${cglib.version}</version>
+			</dependency>
+			
+			<dependency>
+				<groupId>aspectj</groupId>
+				<artifactId>aspectjrt</artifactId>
+				<version>${aspectj.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>aspectj</groupId>
+				<artifactId>aspectjtools</artifactId>
+				<version>${aspectj.version}</version>
+			</dependency>
+			<!-- MySQL database driver -->
+			<dependency>
+				<groupId>mysql</groupId>
+				<artifactId>mysql-connector-java</artifactId>
+				<version>${mysql.version}</version>
+			</dependency>
+
+			<!-- Apache Commons -->
+			<dependency>
+				<groupId>commons-collections</groupId>
+				<artifactId>commons-collections</artifactId>
+				<version>${commons-collections.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>commons-lang</groupId>
+				<artifactId>commons-lang</artifactId>
+				<version>${commons-lang.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>commons-io</groupId>
+				<artifactId>commons-io</artifactId>
+				<version>${commons-io.version}</version>
+			</dependency>
+
+			<!-- Hibernate library dependecy -->
+			<dependency>
+				<groupId>org.hibernate.javax.persistence</groupId>
+				<artifactId>hibernate-jpa-2.1-api</artifactId>
+				<version>${hibernate-jpa.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.hibernate</groupId>
+				<artifactId>hibernate-core</artifactId>
+				<version>${hibernate-core.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.hibernate</groupId>
+				<artifactId>hibernate-validator</artifactId>
+				<version>${hibernate-validator.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>javassist</groupId>
+				<artifactId>javassist</artifactId>
+				<version>${javassist.version}</version>
+			</dependency>
+
+			<!-- log4j dependency -->
+			<dependency>
+				<groupId>log4j</groupId>
+				<artifactId>log4j</artifactId>
+				<version>${log4j.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.slf4j</groupId>
+				<artifactId>slf4j-log4j12</artifactId>
+				<version>${slf4j-log4j12.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>apache</groupId>
+				<artifactId>log4j-datedFileAppender</artifactId>
+				<version>${datedFileAppender}</version>
+			</dependency>
+			<!-- SwingX: extensions for Swing components -->
+			<dependency>
+				<groupId>org.swinglabs.swingx</groupId>
+				<artifactId>swingx-all</artifactId>
+				<version>${swingx.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.jdesktop.bsaf</groupId>
+				<artifactId>bsaf</artifactId>
+				<version>${bsaf.version}</version>
+			</dependency>
+			<dependency>
+			<groupId>com.jidesoft</groupId>
+			<artifactId>jide-oss</artifactId>
+			<version>${jide-oss.version}</version>
+		</dependency>
+			<!-- Layout for swing -->
+			<dependency>
+				<groupId>com.miglayout</groupId>
+				<artifactId>miglayout</artifactId>
+				<version>${miglayout.version}</version>
+				<classifier>swing</classifier>
+			</dependency>
+			<dependency>
+				<groupId>tablelayout</groupId>
+				<artifactId>TableLayout</artifactId>
+				<version>${TableLayout.version}</version>
+			</dependency>
+			<!-- Beansbinding -->
+			<dependency>
+				<groupId>org.jdesktop</groupId>
+				<artifactId>beansbinding</artifactId>
+				<version>${beansbinding.version}</version>
+			</dependency>
+
+			<!-- Jasper report -->
+			<dependency>
+				<groupId>net.sf.jasperreports</groupId>
+				<artifactId>jasperreports</artifactId>
+				<version>${jasperreport.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.jadira.usertype</groupId>
+				<artifactId>usertype.core</artifactId>
+				<version>${usertype.core.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.divxdede</groupId>
+				<artifactId>jbusycomponent</artifactId>
+				<version>${jbusycomponent.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.bushe</groupId>
+				<artifactId>eventbus</artifactId>
+				<version>${eventbus.version}</version>
+			</dependency>
+			
+			<dependency>
+			  <groupId>net.sf.jsefa</groupId>
+			  <artifactId>jsefa</artifactId>
+			  <version>${jsefa.version}</version>
+			</dependency>
+			<!--For number format-->
+			<dependency>
+				<groupId>org.softsmithy.lib</groupId>
+				<artifactId>softsmithy-lib-core</artifactId>
+				<version>${softsmithy.version}</version>
+			</dependency>
+			
+			<dependency>
+				<groupId>org.softsmithy.lib</groupId>
+				<artifactId>softsmithy-lib-swing</artifactId>
+				<version>${softsmithy.version}</version>
+			</dependency>
+		<!--synthetica-->
+		<dependency>
+			<groupId>jyloo</groupId>
+			<artifactId>synthetica</artifactId>
+			<version>${synthetica.version}</version>
+			<scope>system</scope>
+			<systemPath>${project.basedir}/../libs/synthetica.jar</systemPath>
+		</dependency>
+		<dependency>
+			<groupId>jyloo</groupId>
+			<artifactId>syntheticaSkyMetallic</artifactId>
+			<version>${synthetica.version}</version>
+			<scope>system</scope>
+			<systemPath>${project.basedir}/../libs/syntheticaSkyMetallic.jar</systemPath>
+		</dependency>
+		<dependency>
+			<groupId>jyloo</groupId>
+			<artifactId>jytable</artifactId>
+			<version>${synthetica.version}</version>
+			<scope>system</scope>
+			<systemPath>${project.basedir}/../libs/jytable.jar</systemPath>
+		</dependency>
+		<dependency>
+			<groupId>jyloo</groupId>
+			<artifactId>jywidgets</artifactId>
+			<version>${synthetica.version}</version>
+			<scope>system</scope>
+			<systemPath>${project.basedir}/../libs/jywidgets.jar</systemPath>
+		</dependency>
+		<dependency>
+			<groupId>jyloo</groupId>
+			<artifactId>syntheticaAddons</artifactId>
+			<version>${syntheticaAddon.version}</version>
+			<scope>system</scope>
+			<systemPath>${project.basedir}/../libs/syntheticaAddons.jar</systemPath>
+		</dependency>
+		<dependency>
+			<groupId>jyloo</groupId>
+			<artifactId>syntheticaAddonsWithThemes</artifactId>
+			<version>${syntheticaAddon.version}</version>
+			<scope>system</scope>
+			<systemPath>${project.basedir}/../libs/syntheticaAddonsWithThemes.jar</systemPath>
+		</dependency>
+		<dependency>
+			<groupId>jyloo</groupId>
+			<artifactId>syntheticaSkyMetallicAddon</artifactId>
+			<version>${syntheticaAddon.version}</version>
+			<scope>system</scope>
+			<systemPath>${project.basedir}/../libs/syntheticaSkyMetallicAddon.jar</systemPath>
+		</dependency>
+		<dependency>
+			<groupId>jyloo</groupId>
+			<artifactId>jydocking</artifactId>
+			<version>${synthetica.version}</version>
+			<scope>system</scope>
+			<systemPath>${project.basedir}/../libs/jydocking.jar</systemPath>
+		</dependency>
+		<dependency>
+			<groupId>jyloo</groupId>
+			<artifactId>look_and_feel.jar</artifactId>
+			<version>${synthetica.version}</version>
+			<scope>system</scope>
+			<systemPath>${project.basedir}/../libs/look_and_feel.jar</systemPath>
+		</dependency>
+		<dependency>
+		  <groupId>com.oracle</groupId>
+		  <artifactId>javafx</artifactId>
+		  <version>2.0</version>
+		  <scope>system</scope>
+		  <systemPath>${java.home}/lib/ext/jfxrt.jar</systemPath>
+		</dependency>
+		<dependency>
+			<groupId>net.sf.ehcache</groupId>
+			<artifactId>ehcache</artifactId>
+			<version>${ehcache.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.caucho</groupId>
+			<artifactId>hessian</artifactId>
+			<version>${hessian.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.mysema.querydsl</groupId>
+			<artifactId>querydsl-core</artifactId>
+			<version>${querydsl.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.mysema.querydsl</groupId>
+			<artifactId>querydsl-apt</artifactId>
+			<version>${querydsl.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.mysema.querydsl</groupId>
+			<artifactId>querydsl-jpa</artifactId>
+			<version>${querydsl.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+			<version>${commons-lang3.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-all</artifactId>
+			<version>${mockito.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.powermock</groupId>
+			<artifactId>powermock-module-test-mockito-junit4</artifactId>
+			<version>${powermock.version}</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-email</artifactId>
+			<version>${commons-email.version}</version>
+		</dependency>
+		</dependencies>
+	</dependencyManagement>
+</project>
