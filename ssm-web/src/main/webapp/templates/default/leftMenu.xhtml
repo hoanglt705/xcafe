@@ -1,0 +1,20 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<ui:composition>
+	<h:form>
+		<p:menu>
+			<p:submenu label="Bao cao">
+				<p:menuitem value="Doanh thu theo mon"  outcome="productIncomeReport"/>
+				<p:menuitem value="Doanh thu theo ban" outcome="tableIncomeReport"/>
+				<p:menuitem value="Canh bao thieu hang" outcome="warningProductReport"/>
+			</p:submenu>
+			<p:submenu label="Xu ly">
+				<p:menuitem value="Xu ly cuoi ki"  outcome="productIncomeReport"/>
+			</p:submenu>
+		</p:menu>
+	</h:form>
+</ui:composition>
+</html>

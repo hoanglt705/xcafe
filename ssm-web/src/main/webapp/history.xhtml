@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<ui:composition template="/templates/default/dashboardTemplate.xhtml">
+	<ui:define name="content">
+		<h:form>
+			<h:panelGrid  width="100%">
+				<p:schedule id="schedule" value="#{scheduleView.eventModel}"
+					widgetVar="myschedule" timeZone="GMT+7" minTime="9" maxTime="23pm" />
+			</h:panelGrid>
+		</h:form>
+		<style type="text/css">
+		.value {
+			width: 100%;
+		}
+		</style>
+	</ui:define>
+</ui:composition>
+</html>

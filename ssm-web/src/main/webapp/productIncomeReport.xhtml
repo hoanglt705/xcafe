@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<ui:composition template="/templates/default/main.xhtml">
+	<ui:define name="content">
+		<h:form id="form">
+			<h:panelGrid columns="2" cellpadding="10">
+				<p:outputLabel for="fromDate" value="Tu ngay" />
+				<p:calendar id="fromDate" value="#{foodIncomeView.fromDate}"
+					showOn="button" />
+				<p:outputLabel for="toDate" value="Den ngay" />
+				<p:calendar id="toDate" value="#{foodIncomeView.toDate}"
+					showOn="button" />
+				<p:outputLabel for="pickList" value="San pham" />
+
+				<p:pickList id="pickList" value="#{foodIncomeView.sellableProducts}"
+					var="product" itemLabel="#{product.name}"
+					itemValue="#{product.code}" />
+			</h:panelGrid>
+			<p:commandButton value="Tim kiem" icon="ui-icon-check"
+				actionListener="#{foodIncomeView.search}" update="resultTable" />
+			<p:spacer></p:spacer>
+			<p:dataTable id="resultTable" var="income"
+				value="#{foodIncomeView.result}" paginator="true" rows="10"
+				paginatorTemplate="{FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+				rowsPerPageTemplate="5,10,15">
+				<p:column headerText="Code" sortBy="#{income.productCode}">
+					<h:outputText value="#{income.productCode}" />
+				</p:column>
+				<p:column headerText="Name" sortBy="#{income.productName}">
+					<h:outputText value="#{income.productName}" />
+				</p:column>
+				<p:column headerText="Quantity" sortBy="#{income.quantity}">
+					<h:outputText value="#{income.quantity}" />
+				</p:column>
+				<p:column headerText="Amount" sortBy="#{income.totalAmt}">
+					<h:outputText value="#{income.totalAmt}" />
+				</p:column>
+			</p:dataTable>
+		</h:form>
+	</ui:define>
+</ui:composition>
+
+</html>

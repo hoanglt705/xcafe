@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"  
+      xmlns:h="http://java.sun.com/jsf/html"  
+      xmlns:f="http://java.sun.com/jsf/core"  
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">  
+<!-- Bootstrap Core CSS -->
+	<link href="resources/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+
+	<!-- Custom CSS -->
+	<link href="resources/bootstrap/css/sb-admin.css" rel="stylesheet" />
+
+	<!-- Morris Charts CSS -->
+	<link href="resources/bootstrap/css/plugins/morris.css" rel="stylesheet" />
+
+	<!-- Custom Fonts -->
+	<link href="font-awesome-4.1.0/css/font-awesome.min.css"
+		rel="stylesheet" type="text/css" />
+		
+    <ui:composition template="/templates/default/dashboardTemplate.xhtml">
+        <ui:define name="content">                        
+            <div class="container-fluid">
+				<div class="row">
+					<div class="col-lg-6">
+						<div class="panel panel-primary">
+							<div class="panel-heading">
+								<h3 class="panel-title">
+									<i class="fa fa-long-arrow-right"></i> Doanh thu
+								</h3>
+							</div>
+							<div class="panel-body">
+								<p:chart type="bar" model="#{dashboardView.barModel}"/>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-6">
+						<div class="panel panel-primary">
+							<div class="panel-heading">
+								<h3 class="panel-title">
+									<i class="fa fa-long-arrow-right"></i> Ban dang hoat dong
+								</h3>
+							</div>
+							<div class="panel-body">
+                                    <p:chart type="pie" model="#{dashboardView.pieModel}" />
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- /.row -->
+				<div class="row">
+					<div class="col-lg-6">
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								<h3 class="panel-title">
+									<i class="fa fa-clock-o fa-fw"></i> Top payment
+								</h3>
+							</div>
+							<div class="panel-body">
+								<p:dataTable var="payment" value="#{dashboardView.paymentDto}">
+								    <p:column headerText="Code">
+								        <h:outputText value="#{payment.code}" />
+								    </p:column>
+								    
+								    <p:column headerText="Date">
+								        <h:outputText value="#{payment.paymentDate}">
+								        	<f:convertDateTime locale="vi_VN"></f:convertDateTime>
+								        </h:outputText>
+								    </p:column>
+								 
+								    <p:column headerText="Content">
+								        <h:outputText value="#{payment.paymentContent.name}" />
+								    </p:column>
+								 
+								    <p:column headerText="Amount">
+								        <h:outputText value="#{payment.amount}" />
+								    </p:column>
+								</p:dataTable>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-6">
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								<h3 class="panel-title">
+									<i class="fa fa-money fa-fw"></i> Top invoice
+								</h3>
+							</div>
+							<div class="panel-body">
+								<p:dataTable var="invoice" value="#{dashboardView.invoiceDto}">
+								    <p:column headerText="Code">
+								        <h:outputText value="#{invoice.code}"/>
+								    </p:column>
+								    <p:column headerText="Date">
+								        <h:outputText value="#{invoice.createdDate}">
+								        	<f:convertDateTime locale="vi_VN"></f:convertDateTime>
+								        </h:outputText>
+								    </p:column>
+								    <p:column headerText="Table">
+								        <h:outputText value="#{invoice.foodTable}"/>
+								    </p:column>
+								    <p:column headerText="Income">
+								        <h:outputText value="#{invoice.income}"/>
+								    </p:column>
+								</p:dataTable>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+        </ui:define>
+    </ui:composition>        
+</html>  

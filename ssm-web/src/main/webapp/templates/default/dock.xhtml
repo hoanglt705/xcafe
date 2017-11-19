@@ -1,0 +1,22 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<ui:composition>
+	<ui:insert name="dock">
+		<div class="container-fluid">
+			<div class="row">
+				<p:dock position="bottom">
+					<p:menuitem value="Dashboard"
+						icon="/resources/images/dashboard.png" url="dashboard.jsf" />
+					<p:menuitem value="Report" icon="/resources/images/report.png"
+						url="productIncomeReport.jsf" />
+					<p:menuitem value="History" icon="/resources/images/history.png"
+						url="history.jsf" />
+				</p:dock>
+			</div>
+		</div>
+	</ui:insert>
+
+</ui:composition>
+</html>

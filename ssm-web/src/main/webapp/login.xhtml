@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<ui:composition template="/templates/default/dashboardTemplate.xhtml">
+	<ui:define name="content">
+		<h:form id="loginForm"
+			style="width: 300px; margin-left: auto; margin-right: auto;">
+			<p:panel header="Login">
+				<h:panelGrid id="loginPanel" columns="2">
+
+					<h:outputText value="Username" />
+
+					<p:inputText id="username" value="#{loginBean.username}"></p:inputText>
+
+					<p:spacer></p:spacer>
+
+					<p:message for="username"></p:message>
+
+					<h:outputText value="Password" />
+
+					<p:password id="password" value="#{loginBean.password}"
+						feedback="false"></p:password>
+
+					<p:spacer></p:spacer>
+
+					<p:message for="password"></p:message>
+
+					<p:spacer></p:spacer>
+
+					<p:commandButton action="#{loginBean.loginProject}" value="Login"
+						ajax="false"></p:commandButton>
+
+				</h:panelGrid>
+			</p:panel>
+		</h:form>
+	</ui:define>
+	<ui:define name="dock" />
+</ui:composition>
+</html>

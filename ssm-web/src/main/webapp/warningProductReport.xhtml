@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<ui:composition template="/templates/default/main.xhtml">
+	<ui:define name="content">
+		<h:form id="form">
+			<p:dataTable id="resultTable" var="product"	value="#{warningProductView.warningProducts}" rows="10">
+				<p:column headerText="Code" sortBy="#{product.productCode}">
+					<h:outputText value="#{product.productCode}" />
+				</p:column>
+				<p:column headerText="Name" sortBy="#{product.productName}">
+					<h:outputText value="#{product.productName}" />
+				</p:column>
+				<p:column headerText="Unit" sortBy="#{product.uomName}">
+					<h:outputText value="#{product.uomName}" />
+				</p:column>
+				<p:column headerText="Quantity" sortBy="#{product.quantity}">
+					<h:outputText value="#{product.quantity}" />
+				</p:column>
+				<p:column headerText="MinimumQuantity" sortBy="#{product.minimumQuantity}">
+					<h:outputText value="#{product.minimumQuantity}" />
+				</p:column>
+			</p:dataTable>
+		</h:form>
+	</ui:define>
+</ui:composition>
+</html>
