@@ -1,0 +1,19 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+<h:head></h:head>
+<h:body>
+<h:form>
+	Email Address: <h:inputText value="#{trainingForm.emailAddress}"></h:inputText><br/>
+	Favourite Lang: <h:inputText value="#{trainingForm.favouriteLanguage}"></h:inputText><br/>
+	Second Favourite Lang: 
+	<h:selectOneMenu value="#{trainingForm.secondLanguage}">
+		<f:selectItem value="#{trainingForm}"></f:selectItem>
+	</h:selectOneMenu>
+	
+	
+</h:form>
+</h:body>
+</html>
