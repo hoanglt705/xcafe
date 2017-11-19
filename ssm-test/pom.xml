@@ -1,0 +1,54 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+	http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.s3s</groupId>
+		<artifactId>ssm</artifactId>
+		<version>${ssm.version}</version>
+	</parent>
+	<artifactId>ssm-test</artifactId>
+	<version>${ssm.version}</version>
+	<packaging>jar</packaging>
+	<name>SuperSalesManagement Test module</name>
+	<description>Module test of super sales management.</description>
+	<properties>
+		<test.exclude.patterns>**/*Abstract*</test.exclude.patterns>
+		
+	</properties>
+	<dependencies>
+		<dependency>
+			<groupId>com.s3s</groupId>
+			<artifactId>ssm-pos</artifactId>
+			<version>1.0-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>org.netbeans</groupId>
+			<artifactId>jemmy</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+		</dependency>
+	</dependencies>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<configuration>
+					<testSourceDirectory>${basedir}/src/main/java/</testSourceDirectory>
+					<testClassesDirectory>${project.build.directory}/classes/</testClassesDirectory>
+					<useSystemClassLoader>false</useSystemClassLoader>
+					<forkCount>1</forkCount>
+					<reuseForks>false</reuseForks>
+					<testFailureIgnore>true</testFailureIgnore>
+					<excludes>
+						<exclude>${test.exclude.patterns}</exclude>
+					</excludes>
+					<skipTests>${skipTestUI}</skipTests>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>

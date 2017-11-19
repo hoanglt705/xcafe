@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/" debug="false">
+	<appender name="console" class="org.apache.log4j.ConsoleAppender">
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d %5p [%c] %m%n" />
+        </layout>   
+    </appender>
+    
+    <appender name="logfile" class="biz.minaret.log4j.DatedFileAppender"> 
+        <param name="Directory" value="log"/> 
+        <param name="Prefix" value="ssm-app.log-"/> 
+        <param name="Suffix" value=".txt"/> 
+        <param name="Encoding" value="UTF8"/> 
+        <layout class="org.apache.log4j.PatternLayout"> 
+            <param name="ConversionPattern" value="%d %5p [%c] %m%n"/> 
+        </layout> 
+    </appender>
+
+    <logger name="com.s3s">
+        <level value="INFO"/>
+    </logger>
+    
+    <!-- Log everything from SQL, change to WARNING on production -->
+	<logger name="java.sql">
+		<level value="INFO" />
+	</logger>
+	
+	<!-- Log just the SQL (equivalent to property hibernate.show_sql) -->
+	<logger name="org.hibernate.sql">
+		<level value="INFO" />
+	</logger>
+    
+    <root>
+        <level value="INFO"/>
+        <appender-ref ref="console"/>
+        <appender-ref ref="logfile"/>
+    </root>
+    
+</log4j:configuration>
