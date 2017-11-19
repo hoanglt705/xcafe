@@ -1,0 +1,54 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+	http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.s3s</groupId>
+		<artifactId>ssm</artifactId>
+		<version>${ssm.version}</version>
+	</parent>
+	<artifactId>bakery-crm</artifactId>
+	<version>0.1</version>
+	<packaging>jar</packaging>
+	<name>crm module</name>
+	<description>Module CRM</description>
+	<dependencies>
+		<dependency>
+			<groupId>com.s3s</groupId>
+			<artifactId>ssm-core</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.s3s</groupId>
+			<artifactId>ssm-manager</artifactId>
+			<version>${ssm.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.jdesktop.bsaf</groupId>
+			<artifactId>bsaf</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>jyloo</groupId>
+			<artifactId>syntheticaAddons</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>jyloo</groupId>
+			<artifactId>syntheticaAddonsWithThemes</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>jyloo</groupId>
+			<artifactId>synthetica</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>jyloo</groupId>
+			<artifactId>syntheticaSkyMetallic</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>jyloo</groupId>
+			<artifactId>jywidgets</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>jyloo</groupId>
+			<artifactId>jytable</artifactId>
+		</dependency>
+	</dependencies>
+</project>
