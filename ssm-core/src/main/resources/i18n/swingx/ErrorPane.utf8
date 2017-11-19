@@ -1,0 +1,9 @@
+﻿#
+# JXErrorPanel properties
+#
+JXErrorPane.details_expand_text=Chi tiết >>
+JXErrorPane.details_contract_text=Chi tiết <<
+JXErrorPane.ok_button_text=Đóng
+JXErrorPane.fatal_button_text=Thoát ứng dụng
+JXErrorPane.report_button_text=Thông báo lỗi
+JXErrorPane.copy_to_clipboard_button_text=Sao chép đến Clipboard

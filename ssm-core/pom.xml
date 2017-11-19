@@ -1,0 +1,104 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+	http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.s3s</groupId>
+		<artifactId>ssm</artifactId>
+		<version>${ssm.version}</version>
+	</parent>
+	<artifactId>ssm-core</artifactId>
+	<version>${ssm.version}</version>
+	<packaging>jar</packaging>
+	<name>ssm-core module</name>
+	<description>Module core of super sales management.</description>
+	<dependencies>
+		<dependency>
+			<groupId>com.s3s</groupId>
+			<artifactId>ssm-widget</artifactId>
+			<version>${ssm.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-lang</groupId>
+			<artifactId>commons-lang</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>net.sf.ehcache</groupId>
+			<artifactId>ehcache</artifactId>
+		</dependency>
+		<!-- Spring framework -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-core</artifactId>
+			<exclusions>
+				<exclusion>
+					<groupId>commons-logging</groupId>
+					<artifactId>commons-logging</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-orm</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context-support</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-core</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.hibernate.javax.persistence</groupId>
+			<artifactId>hibernate-jpa-2.1-api</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-validator</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>commons-collections</groupId>
+			<artifactId>commons-collections</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.divxdede</groupId>
+			<artifactId>jbusycomponent</artifactId>
+			<exclusions>
+				<exclusion>  <!-- declare the exclusion here -->
+					<groupId>org.swinglabs</groupId>
+					<artifactId>swingx</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<!-- MigLayout -->
+		<dependency>
+			<groupId>com.miglayout</groupId>
+			<artifactId>miglayout</artifactId>
+			<classifier>swing</classifier>
+		</dependency>
+		<!-- Jasper report -->
+		<dependency>
+			<groupId>net.sf.jasperreports</groupId>
+			<artifactId>jasperreports</artifactId>
+		</dependency>
+
+		<!-- Export library -->
+		<dependency>
+			<groupId>jyloo</groupId>
+			<artifactId>jywidgets</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>jyloo</groupId>
+			<artifactId>jytable</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>net.sf.jsefa</groupId>
+			<artifactId>jsefa</artifactId>
+		</dependency>
+	</dependencies>
+</project>

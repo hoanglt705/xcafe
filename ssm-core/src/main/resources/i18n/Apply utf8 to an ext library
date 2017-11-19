@@ -1,0 +1,16 @@
+How to international text file in java?
+
+Java properties files: as stated in its Javadoc the load(InputStream) method of the java.util.Properties API uses ISO 8859-1 as the default encoding. Here's an extract of the class' Javadoc:
+.. the input/output stream is encoded in ISO 8859-1 character encoding. Characters that cannot be directly represented in this encoding can be written using Unicode escapes ; only a single 'u' character is allowed in an escape sequence. The native2ascii tool can be used to convert property files to and from other character encodings.
+If you have full control over loading of the properties files, then you should use the Java 1.6 load(Reader) method in combination with an InputStreamReader instead:
+Properties properties = new Properties();
+properties.load(new InputStreamReader(classLoader.getResourceAsStream(filename), "UTF-8"));
+If you don't have full control over loading of the properties files (e.g. managed by some framework), then you need the in the Javadoc mentioned native2ascii tool. The native2ascii tool can be found in the /bin folder of the JDK installation directory. When you for example need to maintain properties files with Unicode characters for i18n (Internationalization; also known as resource bundles), then it's a good practice to have both an UTF-8 properties file and an ISO 8859-1 properties file and some batch program to convert from the UTF-8 properties file to an ISO 8859-1 properties file. You use the UTF-8 properties file for editing only. You use the converter to convert it to ISO 8859-1 properties file after every edit. You finally just leave the ISO 8859-1 properties file as it is. In most (smart) IDE's like Eclipse you cannot use the .properties extension for those UTF-8 properties files, it would complain about unknown characters because it is forced to save properties files in ISO 8859-1 format. Name it .properties.utf8 or something else. Here's an example of a simple Windows batch file which does the conversion task:
+cd c:\path\to\properties\files
+c:\path\to\jdk\bin\native2ascii.exe -encoding UTF-8 text_cs.properties.utf8 text_cs.properties
+c:\path\to\jdk\bin\native2ascii.exe -encoding UTF-8 text_ja.properties.utf8 text_ja.properties
+c:\path\to\jdk\bin\native2ascii.exe -encoding UTF-8 text_zh.properties.utf8 text_zh.properties
+# You can add more properties files here.
+Save it as utf8.converter.bat (or something like) and run it once to convert all UTF-8 properties files to standard ISO 8859-1 properties files. If you're using Maven and/or Ant, this can even be automated to take place during the build of the project.
+
+refer to http://balusc.blogspot.com/2009/05/unicode-how-to-get-characters-right.html 
