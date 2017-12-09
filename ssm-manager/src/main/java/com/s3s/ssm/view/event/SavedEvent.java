@@ -17,7 +17,7 @@ package com.s3s.ssm.view.event;
 
 import java.util.EventObject;
 
-import com.s3s.ssm.dto.IIdObject;
+import com.s3s.ssm.dto.base.IIdObject;
 
 public class SavedEvent<T extends IIdObject> extends EventObject {
   private static final long serialVersionUID = -3306843792346320138L;

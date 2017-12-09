@@ -1,5 +1,7 @@
 package com.s3s.ssm.dto;
 
+import com.s3s.ssm.dto.base.AbstractCodeObject;
+
 public class FoodTableDto extends AbstractCodeObject {
   private static final long serialVersionUID = -5242913287647085942L;
   private String name;

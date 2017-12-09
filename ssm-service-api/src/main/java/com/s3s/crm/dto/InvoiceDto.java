@@ -4,9 +4,9 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import com.s3s.ssm.dto.AbstractCodeObject;
 import com.s3s.ssm.dto.InvoiceDetailDto;
 import com.s3s.ssm.dto.InvoiceStatus;
+import com.s3s.ssm.dto.base.AbstractCodeObject;
 
 public class InvoiceDto extends AbstractCodeObject {
   private static final long serialVersionUID = 1L;

@@ -20,7 +20,7 @@ import net.sf.jsefa.csv.CsvIOFactory;
 import net.sf.jsefa.csv.CsvSerializer;
 import net.sf.jsefa.csv.config.CsvConfiguration;
 
-import com.s3s.ssm.dto.IActiveObject;
+import com.s3s.ssm.dto.base.IActiveObject;
 import com.s3s.ssm.util.IziImageConstants;
 import com.s3s.ssm.util.IziImageUtils;
 import com.s3s.ssm.util.export.ExportHandler;

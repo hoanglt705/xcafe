@@ -21,7 +21,7 @@ import java.util.Map;
 
 import javax.swing.SwingUtilities;
 
-import com.s3s.ssm.dto.IIdObject;
+import com.s3s.ssm.dto.base.IIdObject;
 import com.s3s.ssm.util.IziClassUtils;
 import com.s3s.ssm.util.WindowUtilities;
 import com.s3s.ssm.util.i18n.ControlConfigUtils;

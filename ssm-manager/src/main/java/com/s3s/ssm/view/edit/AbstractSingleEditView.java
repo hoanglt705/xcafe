@@ -59,7 +59,7 @@ import org.springframework.beans.BeanWrapper;
 import org.springframework.beans.BeanWrapperImpl;
 import org.springframework.util.Assert;
 
-import com.s3s.ssm.dto.ICodeObject;
+import com.s3s.ssm.dto.base.ICodeObject;
 import com.s3s.ssm.entity.AbstractBaseIdObject;
 import com.s3s.ssm.interfaces.IDirtiableObject;
 import com.s3s.ssm.model.ReferenceDataModel;

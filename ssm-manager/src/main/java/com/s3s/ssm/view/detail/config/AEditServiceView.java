@@ -2,7 +2,7 @@ package com.s3s.ssm.view.detail.config;
 
 import java.util.Map;
 
-import com.s3s.ssm.dto.ICodeObject;
+import com.s3s.ssm.dto.base.ICodeObject;
 import com.s3s.ssm.service.IViewService;
 import com.s3s.ssm.view.edit.AbstractSingleEditView;
 

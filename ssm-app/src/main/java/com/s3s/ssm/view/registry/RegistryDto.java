@@ -1,6 +1,6 @@
 package com.s3s.ssm.view.registry;
 
-import com.s3s.ssm.dto.ICodeObject;
+import com.s3s.ssm.dto.base.ICodeObject;
 
 public class RegistryDto implements ICodeObject {
   private String name;

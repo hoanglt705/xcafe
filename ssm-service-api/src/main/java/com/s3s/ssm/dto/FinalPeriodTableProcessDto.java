@@ -2,6 +2,8 @@ package com.s3s.ssm.dto;
 
 import java.util.Date;
 
+import com.s3s.ssm.dto.base.AbstractCodeObject;
+
 public class FinalPeriodTableProcessDto extends AbstractCodeObject {
   private static final long serialVersionUID = -4981758112218834552L;
   private String foodTableCode;

@@ -1,7 +1,7 @@
 package com.s3s.crm.dto;
 
-import com.s3s.ssm.dto.AbstractCodeObject;
 import com.s3s.ssm.dto.ProductDto;
+import com.s3s.ssm.dto.base.AbstractCodeObject;
 
 public class InvoiceDetailDto extends AbstractCodeObject {
   private static final long serialVersionUID = 1L;

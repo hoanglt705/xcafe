@@ -24,7 +24,7 @@ import javax.swing.JCheckBox;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-import com.s3s.ssm.dto.ACLResourceEnum;
+import com.s3s.ssm.dto.base.ACLResourceEnum;
 import com.s3s.ssm.util.i18n.ControlConfigUtils;
 import com.s3s.ssm.view.layout.GridBagLayoutBuilder;
 

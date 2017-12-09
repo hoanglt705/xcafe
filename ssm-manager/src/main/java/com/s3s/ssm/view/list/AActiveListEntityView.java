@@ -27,7 +27,7 @@ import javax.swing.JRadioButtonMenuItem;
 import javax.swing.JToolBar;
 import javax.swing.SwingUtilities;
 
-import com.s3s.ssm.dto.IActiveObject;
+import com.s3s.ssm.dto.base.IActiveObject;
 import com.s3s.ssm.util.IziImageConstants;
 import com.s3s.ssm.util.IziImageUtils;
 

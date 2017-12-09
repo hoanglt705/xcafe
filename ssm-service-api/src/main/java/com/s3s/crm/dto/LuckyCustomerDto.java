@@ -2,7 +2,7 @@ package com.s3s.crm.dto;
 
 import java.util.Date;
 
-import com.s3s.ssm.dto.AbstractCodeObject;
+import com.s3s.ssm.dto.base.AbstractCodeObject;
 
 public class LuckyCustomerDto extends AbstractCodeObject {
   private static final long serialVersionUID = 1L;

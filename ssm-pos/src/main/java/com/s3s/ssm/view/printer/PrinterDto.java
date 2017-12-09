@@ -2,7 +2,7 @@ package com.s3s.ssm.view.printer;
 
 import java.io.Serializable;
 
-import com.s3s.ssm.dto.ICodeObject;
+import com.s3s.ssm.dto.base.ICodeObject;
 
 @SuppressWarnings("unused")
 public class PrinterDto implements ICodeObject, Serializable {

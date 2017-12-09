@@ -6,7 +6,7 @@ import java.util.List;
 
 import javax.swing.Icon;
 
-import com.s3s.ssm.dto.IActiveObject;
+import com.s3s.ssm.dto.base.IActiveObject;
 import com.s3s.ssm.service.IViewService;
 
 public abstract class AListServiceView<T extends IActiveObject> extends AConfiguredListEntityView<T> {

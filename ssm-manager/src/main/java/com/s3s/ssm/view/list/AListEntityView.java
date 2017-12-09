@@ -34,7 +34,7 @@ import javax.swing.event.ChangeEvent;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
-import com.s3s.ssm.dto.IIdObject;
+import com.s3s.ssm.dto.base.IIdObject;
 import com.s3s.ssm.entity.AbstractIdOLObject;
 import com.s3s.ssm.util.IziImageConstants;
 import com.s3s.ssm.util.IziImageUtils;

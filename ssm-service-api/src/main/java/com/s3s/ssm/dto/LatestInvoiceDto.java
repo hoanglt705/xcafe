@@ -2,6 +2,8 @@ package com.s3s.ssm.dto;
 
 import java.util.Date;
 
+import com.s3s.ssm.dto.base.AbstractCodeObject;
+
 public class LatestInvoiceDto extends AbstractCodeObject {
   private static final long serialVersionUID = 1L;
   private String foodTable;

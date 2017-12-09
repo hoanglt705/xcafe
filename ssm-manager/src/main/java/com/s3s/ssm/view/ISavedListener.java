@@ -17,7 +17,7 @@ package com.s3s.ssm.view;
 
 import java.util.EventListener;
 
-import com.s3s.ssm.dto.IIdObject;
+import com.s3s.ssm.dto.base.IIdObject;
 import com.s3s.ssm.view.event.SavedEvent;
 
 public interface ISavedListener<T extends IIdObject> extends EventListener {

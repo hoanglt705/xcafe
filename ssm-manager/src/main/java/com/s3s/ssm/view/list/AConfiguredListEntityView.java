@@ -2,7 +2,7 @@ package com.s3s.ssm.view.list;
 
 import javax.swing.Icon;
 
-import com.s3s.ssm.dto.IActiveObject;
+import com.s3s.ssm.dto.base.IActiveObject;
 
 public abstract class AConfiguredListEntityView<T extends IActiveObject> extends
         AActiveListEntityView<T> {
